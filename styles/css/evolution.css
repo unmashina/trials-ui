@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "FGD Bold Italic";
+  src: url(/fonts/Evolution/Segoe\ UI\ Bold\ Italic.ttf);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #614e32;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tck {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: url(/img/evolution/BG_TrackCentral_SearchList.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: "FGD Bold Italic";
+  font-size: 1.7rem;
+  max-width: 1720px;
+  width: 90vw;
+  height: 826px;
+  padding: 53px 59px 0 59px;
+}
+@media screen and (max-width: 959px) {
+  .tck {
+    font-size: 1rem;
+  }
+}
+.tck__header {
+  display: grid;
+  position: relative;
+  grid-template-columns: minmax(128px, 282px) 34px minmax(262px, 678px) 128px minmax(150px, 467px);
+  color: #ffac04;
+  font-size: 1.8rem;
+  padding: 0 17px 1px 17px;
+  margin: 0 -17px 20px -17px;
+}
+.tck__header::after {
+  content: "";
+  position: absolute;
+  background-image: url(/img/evolution/Line.png);
+  background-size: cover;
+  width: 100%;
+  height: 9px;
+  top: 100%;
+}
+@media screen and (max-width: 959px) {
+  .tck__header {
+    grid-template-columns: minmax(128px, 128px) 34px minmax(262px, 262px) 128px minmax(150px, 150px);
+  }
+}
+.tck__header > * {
+  position: relative;
+  z-index: 1;
+}
+.tck__header > *::before {
+  content: attr(data-content);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: #000000;
+  z-index: -1;
+  -webkit-text-stroke: 4px #000000;
+}
+.tck__header--rank {
+  padding-left: 25px;
+}
+.tck__header--rank::before {
+  padding-left: 25px;
+}
+.tck__body {
+  display: flex;
+  flex-direction: column;
+  height: 630px;
+  overflow-y: auto;
+  color: #ffffff;
+  counter-reset: rank;
+  font-size: 2rem;
+  margin-right: -48px;
+}
+.tck__body::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  top: 8%;
+  background-image: url(/img/evolution/ScrollBarBg.png);
+  height: 100%;
+  width: 95px;
+  background-repeat: no-repeat;
+  background-size: 100% 85%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  z-index: -1;
+}
+.tck__body::-webkit-scrollbar-thumb {
+  width: 100%;
+  background: #ffaf00;
+  z-index: 2;
+  height: 50px;
+}
+.tck__body::-webkit-scrollbar {
+  width: 20px;
+  background: none;
+}
+.tck__body .tck__row {
+  display: grid;
+  position: relative;
+  grid-template-columns: minmax(128px, 282px) 34px minmax(262px, 678px) 128px minmax(150px, 467px);
+  align-items: center;
+  grid-template-rows: 42px;
+  counter-increment: rank;
+  margin: -10px 0;
+  padding: 10px 0;
+}
+@media screen and (max-width: 959px) {
+  .tck__body .tck__row {
+    grid-template-columns: minmax(128px, 128px) 34px minmax(262px, 262px) 128px minmax(150px, 150px);
+    grid-template-rows: 30px;
+  }
+}
+.tck__body .tck__row:hover {
+  background: url(/img/evolution/Leaderboard_Selection_BG.png);
+  background-size: 100% 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.tck__body .tck__row > * {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding-bottom: 10px;
+}
+.tck__body .tck__row > *::before {
+  content: attr(data-content);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: #000000;
+  z-index: -1;
+  -webkit-text-stroke: 4px #000000;
+}
+.tck__body .tck__row--rank::after {
+  position: relative;
+}
+.tck__body .tck__row--rank::before, .tck__body .tck__row--rank::after {
+  content: counter(rank);
+  padding-left: 25px;
+}
+.tck__body .tck__row--name.role::after {
+  content: url("/img/evolution/badge/developer.png");
+  position: relative;
+  height: 10px;
+}
+.tck__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffac04;
+  font-size: 2rem;
+}/*# sourceMappingURL=evolution.css.map */

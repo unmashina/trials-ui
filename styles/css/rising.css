@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@font-face {
+  font-family: "News Gothic";
+  src: url(fonts/Acumin-Pro-Semibold.ttf);
+}
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --orange: #ff7c00;
+  --grey: #b2b2b2;
+  --blue: #2cffb9;
+  --row-even: #0000009f;
+  --row-odd: #00000057;
+}
+
+body {
+  position: relative;
+  /* font-family: 'Fjalla One', sans-serif; */
+  font-family: "Oswald", sans-serif;
+  /* font-family: 'News Gothic'; */
+  /* background: linear-gradient(45deg, #454eb5, #571658); */
+  background-image: url(../../img/toni-repo-dapper-zbrush9.jpg);
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*  */
+.ctn-ldb {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--white);
+  padding: 0 50px;
+}
+
+.ldb-header {
+  display: grid;
+  grid-template-columns: 75px 122px 44px minmax(auto, 485px) 268px 93px 207px 112px 190px;
+  grid-template-rows: 73px;
+  align-content: center;
+  font-size: 1.7rem;
+  color: var(--grey);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding-right: 20px;
+}
+
+.ldb-header > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+}
+
+.ldb-header .ldb-header--name,
+.ldb-body .ldb-body--row .ldb-body--name {
+  justify-content: start;
+}
+
+.ldb-body--name {
+  white-space: nowrap;
+}
+
+.ldb-body::-webkit-scrollbar {
+  width: 6px;
+  background: var(--black);
+}
+
+.ldb-body::-webkit-scrollbar-thumb {
+  background: var(--white);
+}
+
+.ldb-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 1.7rem;
+  counter-reset: rank;
+  max-height: 537px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 12px;
+  scroll-snap-type: y mandatory;
+}
+
+.ldb-body--row {
+  display: grid;
+  grid-template-columns: 75px 122px 44px minmax(auto, 485px) 268px 93px 207px 112px 190px;
+  grid-template-rows: 57px;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.ldb-body--rank {
+  counter-increment: rank 1;
+}
+
+.ldb-body--rank::before {
+  content: counter(rank);
+}
+
+/* IMAGES */
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.ldb-body--medal img {
+  width: 60px;
+}
+
+.ldb-body--platform img {
+  width: 30px;
+}
+
+.ldb-body--flag img {
+  height: 20px;
+  width: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+/* END IMAGES */
+.ldb-body--row:nth-of-type(odd) {
+  background: var(--row-odd);
+}
+
+.ldb-body--row:nth-of-type(even) {
+  background: var(--row-even);
+}
+
+.ldb-body--row > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ldb-header .ldb-header--blank {
+  background: none;
+}
+
+.ldb-body .ldb-body--row .ldb-body--blank {
+  pointer-events: none;
+  background: none;
+}
+
+.ldb-body--row:hover {
+  background: var(--blue);
+  color: var(--black);
+}
+
+.ldb-footer {
+  display: grid;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 1.6rem;
+  height: 38px;
+  grid-template-rows: 38px;
+  grid-template-columns: minmax(auto, 726px) minmax(auto, 870px);
+  padding-right: 20px;
+}
+
+.ldb-footer--total {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.171);
+  padding-left: 20px;
+}
+
+.ldb-footer--date {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.171);
+  padding-right: 20px;
+}
+
+.number {
+  color: var(--orange);
+}
+
+.number-after::after {
+  content: counter(rank);
+}
+
+.number::after {
+  content: "(+" counter(rank) ")";
+}
+
+.date {
+  color: var(--blue);
+}/*# sourceMappingURL=rising.css.map */

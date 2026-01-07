@@ -1,0 +1,185 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: "Futura PT Medium";
+  src: url(../../fonts/Fusion/Futura\ PT\ Medium.ttf);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Futura PT Medium";
+  background-repeat: no-repeat;
+  background-color: #1c2c3d;
+}
+
+main {
+  flex-direction: column;
+  margin-top: 30px;
+  color: white;
+  position: relative;
+  gap: 87px;
+}
+
+img {
+  cursor: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.tck-header {
+  font-size: 3.7rem;
+  text-shadow: -2px 2px 5px #0c5369, 2px -2px 5px #0c5369, 0px -1px 5px #00c3ff, 0px 2px 5px #00c3ff;
+}
+
+.tck {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  left: 3px;
+}
+.tck__header {
+  display: grid;
+  grid-template-rows: 54px;
+  grid-template-columns: 92px 65px 46px 578px 288px 275px 342px;
+  font-size: 1.7rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-shadow: -2px 2px 5px #0c5369, 2px -2px 5px #0c5369, 0px -1px 5px #00c3ff, 0px 2px 5px #00c3ff;
+}
+.tck__header * {
+  margin: auto 0;
+}
+.tck__header--rank {
+  padding-left: 6px;
+}
+.tck__header--name {
+  padding-left: 8px;
+}
+.tck__header--medal {
+  text-align: center;
+  padding-left: 10px;
+}
+.tck__header--faults {
+  text-align: center;
+  padding-left: 10px;
+}
+.tck__header--time {
+  padding-left: 25px;
+}
+.tck__body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 600px;
+  gap: 4px;
+  counter-reset: rank 0;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+}
+.tck__body .ldb__row {
+  background: rgba(255, 255, 255, 0.068);
+  display: grid;
+  grid-template-rows: 54px;
+  grid-template-columns: 92px 65px 46px 578px 288px 275px 342px;
+  font-size: 1.8rem;
+  counter-increment: rank;
+  scroll-snap-align: start;
+}
+.tck__body .ldb__row:hover {
+  background: #dbdb0b;
+  color: #172532;
+}
+.tck__body .ldb__row > * {
+  margin: auto 0;
+}
+.tck__body .ldb__row--rank {
+  padding-left: 22px;
+}
+.tck__body .ldb__row--rank::before {
+  position: relative;
+  content: counter(rank);
+}
+.tck__body .ldb__row--club {
+  cursor: pointer;
+}
+.tck__body .ldb__row--club img {
+  display: block;
+  margin: auto;
+}
+.tck__body .ldb__row--flag img {
+  width: 100%;
+  margin-top: 10px;
+  height: 28px;
+}
+.tck__body .ldb__row--name {
+  padding-left: 11px;
+}
+.tck__body .ldb__row--medal {
+  text-align: center;
+  height: 100%;
+}
+.tck__body .ldb__row--medal img {
+  height: 100%;
+}
+.tck__body .ldb__row--faults {
+  padding-left: 129px;
+}
+.tck__body .ldb__row--time {
+  padding-left: 24px;
+}
+.tck__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 1.77rem;
+  height: 50px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-shadow: -2px 2px 5px #0c5369, 2px -2px 5px #0c5369, 0px -1px 5px #00c3ff, 0px 2px 5px #00c3ff;
+}
+.tck__footer--riders {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 6px;
+}
+.tck__footer--riders::after {
+  content: counter(rank);
+  position: relative;
+  font-size: 2.4rem;
+  left: 13px;
+}
+.tck__footer--list {
+  padding-right: 20px;
+  font-size: 1.7rem;
+}
+.tck__footer--list button {
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  color: white;
+  padding: 0 10px;
+}
+.tck__footer--list button#previous-page {
+  margin-right: 20px;
+}
+.tck__footer--list button#next-page {
+  margin-left: 20px;
+}
+.tck__footer--list button:hover {
+  color: rgb(151, 151, 151);
+}/*# sourceMappingURL=fusion.css.map */

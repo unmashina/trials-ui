@@ -1,0 +1,220 @@
+// @import './variables';
+// @import './mixins';
+// @import './placeholders';
+
+
+@font-face {
+  font-family: "Futura PT Medium";
+  src: url(../../fonts/Fusion/Futura\ PT\ Medium.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+body {
+  // background: url(../../img/fusion.png);
+  font-family: "Futura PT Medium";
+  background-repeat: no-repeat;
+  background-color: #1c2c3d;
+}
+
+main {
+  // @extend %flex-center;
+  flex-direction: column;
+  // margin-top: 68px;
+  margin-top: 30px;
+  // color: $clr-text;
+  position: relative;
+  gap: 87px;
+}
+
+img {
+  cursor: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.tck-header {
+  font-size: 3.7rem;
+  text-shadow:  -2px 2px 5px #0c5369, 2px -2px 5px #0c5369, 0px -1px 5px #00c3ff, 0px 2px 5px #00c3ff;
+}
+
+.tck {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    left: 3px;
+
+    &__header {
+        display: grid;
+        grid-template-rows: 54px;
+        grid-template-columns: 92px 65px 46px 578px 288px 275px 342px;
+        font-size: 1.7rem;
+        user-select: none;
+        text-shadow:  -2px 2px 5px #0c5369, 2px -2px 5px #0c5369, 0px -1px 5px #00c3ff, 0px 2px 5px #00c3ff;
+        * {
+          margin: auto 0;
+        }
+
+        &--rank {
+          padding-left: 6px;
+        }
+
+        &--name {
+          padding-left: 8px;
+        }
+
+        &--medal {
+          text-align: center;
+          padding-left: 10px;
+        }
+
+        &--faults {
+          text-align: center;
+          padding-left: 10px;
+        }
+
+        &--time {
+          padding-left: 25px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-height: 600px;
+        gap: 4px;
+        counter-reset: rank 0;
+        overflow: hidden;
+        scroll-snap-type: x mandatory;
+
+        .ldb__row {
+            background: rgba(255, 255, 255, 0.068);
+            display: grid;
+            grid-template-rows: 54px;
+            grid-template-columns: 92px 65px 46px 578px 288px 275px 342px;
+            font-size: 1.8rem;
+            counter-increment: rank;
+            scroll-snap-align: start;
+
+            &:hover{
+              background: #dbdb0b;
+              color: #172532;
+            }
+
+            > * {
+              margin: auto 0;
+            }
+
+            &--rank {
+              padding-left: 22px;
+
+                &::before  {
+                  position: relative;
+                  content: counter(rank);
+                }
+
+            }
+   
+            &--club {
+                cursor: pointer;
+                
+                img {
+                  display: block;
+                  margin: auto;
+                }
+            }
+
+            &--flag {
+
+                img {
+                  width: 100%;
+                  margin-top: 10px;
+                  height: 28px;
+                }
+            }
+
+            &--name {
+              padding-left: 11px;
+            }
+
+            &--medal {
+              text-align: center;
+              height: 100%;
+
+              img {
+                height: 100%;
+              }
+            }
+
+            &--faults {
+              padding-left: 129px;
+            }
+
+            &--time {
+              padding-left: 24px;
+            }
+
+        }
+    }
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      font-size: 1.77rem;
+      height: 50px;
+      user-select: none;
+      text-shadow:  -2px 2px 5px #0c5369, 2px -2px 5px #0c5369, 0px -1px 5px #00c3ff, 0px 2px 5px #00c3ff;
+
+        &--riders {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-left: 6px;
+
+          &::after {
+            content: counter(rank);
+            position: relative;
+            font-size: 2.4rem;
+            left: 13px;
+          }
+
+        }
+        
+        &--list {
+          padding-right: 20px;
+          font-size: 1.7rem;
+        
+          button {
+            font-size: 1.4rem;
+            background: none;
+            border: none;
+            // color: $clr-text;
+            padding: 0 10px;
+            
+
+            &#previous-page{
+              margin-right: 20px;
+            }
+
+            &#next-page{
+              margin-left: 20px;
+            }
+
+            &:hover {
+              color: rgb(151, 151, 151);
+            }
+          }
+          
+        }
+    
+    }
+}
